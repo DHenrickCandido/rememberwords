@@ -1,0 +1,681 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B0C88392B20B1AA00B898FA /* WordDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0C88382B20B1AA00B898FA /* WordDetailedView.swift */; };
+		8B0C883B2B20B7CF00B898FA /* WordShuffleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0C883A2B20B7CF00B898FA /* WordShuffleView.swift */; };
+		8B0EF8EC2ACAA6E10010FA02 /* ToggleStateIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD932662AC93B3000F49E24 /* ToggleStateIntent.swift */; };
+		8B0EF8EF2ACAA6F20010FA02 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9325D2AC8BC4100F49E24 /* CardView.swift */; };
+		8B3968562BEF385C00F3F8A7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8B3968552BEF385C00F3F8A7 /* FirebaseAnalytics */; };
+		8B3968582BEF385C00F3F8A7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8B3968572BEF385C00F3F8A7 /* FirebaseAuth */; };
+		8B39685A2BEF385C00F3F8A7 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8B3968592BEF385C00F3F8A7 /* FirebaseCrashlytics */; };
+		8B39685C2BEF385C00F3F8A7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8B39685B2BEF385C00F3F8A7 /* FirebaseFirestore */; };
+		8B39685E2BEF385C00F3F8A7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B39685D2BEF385C00F3F8A7 /* FirebaseFirestoreSwift */; };
+		8B8AC1B22AC1C3570030F5DC /* rememberWordsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8AC1B12AC1C3570030F5DC /* rememberWordsApp.swift */; };
+		8B8AC1B42AC1C3570030F5DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8AC1B32AC1C3570030F5DC /* ContentView.swift */; };
+		8B8AC1B62AC1C3590030F5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B8AC1B52AC1C3590030F5DC /* Assets.xcassets */; };
+		8B8AC1B92AC1C3590030F5DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B8AC1B82AC1C3590030F5DC /* Preview Assets.xcassets */; };
+		8B8AC1C02AC1C99A0030F5DC /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8AC1BF2AC1C99A0030F5DC /* Word.swift */; };
+		8B8AC1C82AC1CDB30030F5DC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8AC1C72AC1CDB30030F5DC /* WidgetKit.framework */; };
+		8B8AC1CA2AC1CDB30030F5DC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8AC1C92AC1CDB30030F5DC /* SwiftUI.framework */; };
+		8B8AC1CD2AC1CDB40030F5DC /* RandomWordLearnedBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8AC1CC2AC1CDB40030F5DC /* RandomWordLearnedBundle.swift */; };
+		8B8AC1CF2AC1CDB40030F5DC /* RandomWordLearned.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8AC1CE2AC1CDB40030F5DC /* RandomWordLearned.swift */; };
+		8B8AC1D12AC1CDB50030F5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B8AC1D02AC1CDB50030F5DC /* Assets.xcassets */; };
+		8B8AC1D52AC1CDB50030F5DC /* RandomWordLearnedExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8B8AC1C52AC1CDB30030F5DC /* RandomWordLearnedExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8B8AC1DC2AC303090030F5DC /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8AC1BF2AC1C99A0030F5DC /* Word.swift */; };
+		8BBDC1402BEF469100CF6C2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BBDC13F2BEF469100CF6C2D /* GoogleService-Info.plist */; };
+		8BBDC1412BEF469100CF6C2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BBDC13F2BEF469100CF6C2D /* GoogleService-Info.plist */; };
+		8BD932572AC7F22000F49E24 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD932562AC7F22000F49E24 /* test.swift */; };
+		8BD932592AC8AB1900F49E24 /* HomeDecksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD932582AC8AB1900F49E24 /* HomeDecksView.swift */; };
+		8BD9325C2AC8B10000F49E24 /* DeckCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9325B2AC8B10000F49E24 /* DeckCardView.swift */; };
+		8BD9325E2AC8BC4100F49E24 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9325D2AC8BC4100F49E24 /* CardView.swift */; };
+		8BD932612AC8C63000F49E24 /* AddDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD932602AC8C63000F49E24 /* AddDeckView.swift */; };
+		8BD932632AC8C64000F49E24 /* AddWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD932622AC8C64000F49E24 /* AddWordView.swift */; };
+		8BD932652AC8DFAC00F49E24 /* WordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD932642AC8DFAC00F49E24 /* WordsView.swift */; };
+		8BD932682AC93B3400F49E24 /* ToggleStateIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD932662AC93B3000F49E24 /* ToggleStateIntent.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B8AC1D32AC1CDB50030F5DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B8AC1A62AC1C3570030F5DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B8AC1C42AC1CDB30030F5DC;
+			remoteInfo = RandomWordLearnedExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8B8AC1D92AC1CDB50030F5DC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8B8AC1D52AC1CDB50030F5DC /* RandomWordLearnedExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8B0C88382B20B1AA00B898FA /* WordDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailedView.swift; sourceTree = "<group>"; };
+		8B0C883A2B20B7CF00B898FA /* WordShuffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordShuffleView.swift; sourceTree = "<group>"; };
+		8B8AC1AE2AC1C3570030F5DC /* rememberWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rememberWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B8AC1B12AC1C3570030F5DC /* rememberWordsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rememberWordsApp.swift; sourceTree = "<group>"; };
+		8B8AC1B32AC1C3570030F5DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8B8AC1B52AC1C3590030F5DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B8AC1B82AC1C3590030F5DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8B8AC1BF2AC1C99A0030F5DC /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		8B8AC1C52AC1CDB30030F5DC /* RandomWordLearnedExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RandomWordLearnedExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B8AC1C72AC1CDB30030F5DC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		8B8AC1C92AC1CDB30030F5DC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		8B8AC1CC2AC1CDB40030F5DC /* RandomWordLearnedBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWordLearnedBundle.swift; sourceTree = "<group>"; };
+		8B8AC1CE2AC1CDB40030F5DC /* RandomWordLearned.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWordLearned.swift; sourceTree = "<group>"; };
+		8B8AC1D02AC1CDB50030F5DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B8AC1D22AC1CDB50030F5DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BBDC13F2BEF469100CF6C2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8BC320FE2AC31BE3007D845F /* rememberWords.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rememberWords.entitlements; sourceTree = "<group>"; };
+		8BD932552AC5A88600F49E24 /* RandomWordLearnedExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RandomWordLearnedExtension.entitlements; sourceTree = "<group>"; };
+		8BD932562AC7F22000F49E24 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		8BD932582AC8AB1900F49E24 /* HomeDecksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDecksView.swift; sourceTree = "<group>"; };
+		8BD9325B2AC8B10000F49E24 /* DeckCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCardView.swift; sourceTree = "<group>"; };
+		8BD9325D2AC8BC4100F49E24 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		8BD932602AC8C63000F49E24 /* AddDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeckView.swift; sourceTree = "<group>"; };
+		8BD932622AC8C64000F49E24 /* AddWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordView.swift; sourceTree = "<group>"; };
+		8BD932642AC8DFAC00F49E24 /* WordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsView.swift; sourceTree = "<group>"; };
+		8BD932662AC93B3000F49E24 /* ToggleStateIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStateIntent.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B8AC1AB2AC1C3570030F5DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B39685E2BEF385C00F3F8A7 /* FirebaseFirestoreSwift in Frameworks */,
+				8B39685A2BEF385C00F3F8A7 /* FirebaseCrashlytics in Frameworks */,
+				8B39685C2BEF385C00F3F8A7 /* FirebaseFirestore in Frameworks */,
+				8B3968562BEF385C00F3F8A7 /* FirebaseAnalytics in Frameworks */,
+				8B3968582BEF385C00F3F8A7 /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B8AC1C22AC1CDB30030F5DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B8AC1CA2AC1CDB30030F5DC /* SwiftUI.framework in Frameworks */,
+				8B8AC1C82AC1CDB30030F5DC /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B8AC1A52AC1C3570030F5DC = {
+			isa = PBXGroup;
+			children = (
+				8BD932552AC5A88600F49E24 /* RandomWordLearnedExtension.entitlements */,
+				8B8AC1B02AC1C3570030F5DC /* rememberWords */,
+				8B8AC1CB2AC1CDB40030F5DC /* RandomWordLearned */,
+				8B8AC1C62AC1CDB30030F5DC /* Frameworks */,
+				8B8AC1AF2AC1C3570030F5DC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8B8AC1AF2AC1C3570030F5DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B8AC1AE2AC1C3570030F5DC /* rememberWords.app */,
+				8B8AC1C52AC1CDB30030F5DC /* RandomWordLearnedExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B8AC1B02AC1C3570030F5DC /* rememberWords */ = {
+			isa = PBXGroup;
+			children = (
+				8BD9325F2AC8C61900F49E24 /* sheets */,
+				8BD9325A2AC8B0EB00F49E24 /* Cards */,
+				8BC320FE2AC31BE3007D845F /* rememberWords.entitlements */,
+				8B8AC1B12AC1C3570030F5DC /* rememberWordsApp.swift */,
+				8B8AC1B32AC1C3570030F5DC /* ContentView.swift */,
+				8B8AC1B52AC1C3590030F5DC /* Assets.xcassets */,
+				8B8AC1B72AC1C3590030F5DC /* Preview Content */,
+				8B8AC1BF2AC1C99A0030F5DC /* Word.swift */,
+				8BD932562AC7F22000F49E24 /* test.swift */,
+				8BD932582AC8AB1900F49E24 /* HomeDecksView.swift */,
+				8BBDC13F2BEF469100CF6C2D /* GoogleService-Info.plist */,
+				8BD932642AC8DFAC00F49E24 /* WordsView.swift */,
+				8B0C88382B20B1AA00B898FA /* WordDetailedView.swift */,
+				8B0C883A2B20B7CF00B898FA /* WordShuffleView.swift */,
+			);
+			path = rememberWords;
+			sourceTree = "<group>";
+		};
+		8B8AC1B72AC1C3590030F5DC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8B8AC1B82AC1C3590030F5DC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8B8AC1C62AC1CDB30030F5DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B8AC1C72AC1CDB30030F5DC /* WidgetKit.framework */,
+				8B8AC1C92AC1CDB30030F5DC /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B8AC1CB2AC1CDB40030F5DC /* RandomWordLearned */ = {
+			isa = PBXGroup;
+			children = (
+				8B8AC1CC2AC1CDB40030F5DC /* RandomWordLearnedBundle.swift */,
+				8B8AC1CE2AC1CDB40030F5DC /* RandomWordLearned.swift */,
+				8BD932662AC93B3000F49E24 /* ToggleStateIntent.swift */,
+				8B8AC1D02AC1CDB50030F5DC /* Assets.xcassets */,
+				8B8AC1D22AC1CDB50030F5DC /* Info.plist */,
+			);
+			path = RandomWordLearned;
+			sourceTree = "<group>";
+		};
+		8BD9325A2AC8B0EB00F49E24 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				8BD9325B2AC8B10000F49E24 /* DeckCardView.swift */,
+				8BD9325D2AC8BC4100F49E24 /* CardView.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		8BD9325F2AC8C61900F49E24 /* sheets */ = {
+			isa = PBXGroup;
+			children = (
+				8BD932602AC8C63000F49E24 /* AddDeckView.swift */,
+				8BD932622AC8C64000F49E24 /* AddWordView.swift */,
+			);
+			path = sheets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B8AC1AD2AC1C3570030F5DC /* rememberWords */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B8AC1BC2AC1C3590030F5DC /* Build configuration list for PBXNativeTarget "rememberWords" */;
+			buildPhases = (
+				8B8AC1AA2AC1C3570030F5DC /* Sources */,
+				8B8AC1AB2AC1C3570030F5DC /* Frameworks */,
+				8B8AC1AC2AC1C3570030F5DC /* Resources */,
+				8B8AC1D92AC1CDB50030F5DC /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B8AC1D42AC1CDB50030F5DC /* PBXTargetDependency */,
+			);
+			name = rememberWords;
+			packageProductDependencies = (
+				8B3968552BEF385C00F3F8A7 /* FirebaseAnalytics */,
+				8B3968572BEF385C00F3F8A7 /* FirebaseAuth */,
+				8B3968592BEF385C00F3F8A7 /* FirebaseCrashlytics */,
+				8B39685B2BEF385C00F3F8A7 /* FirebaseFirestore */,
+				8B39685D2BEF385C00F3F8A7 /* FirebaseFirestoreSwift */,
+			);
+			productName = rememberWords;
+			productReference = 8B8AC1AE2AC1C3570030F5DC /* rememberWords.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8B8AC1C42AC1CDB30030F5DC /* RandomWordLearnedExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B8AC1D62AC1CDB50030F5DC /* Build configuration list for PBXNativeTarget "RandomWordLearnedExtension" */;
+			buildPhases = (
+				8B8AC1C12AC1CDB30030F5DC /* Sources */,
+				8B8AC1C22AC1CDB30030F5DC /* Frameworks */,
+				8B8AC1C32AC1CDB30030F5DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RandomWordLearnedExtension;
+			productName = RandomWordLearnedExtension;
+			productReference = 8B8AC1C52AC1CDB30030F5DC /* RandomWordLearnedExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B8AC1A62AC1C3570030F5DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					8B8AC1AD2AC1C3570030F5DC = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					8B8AC1C42AC1CDB30030F5DC = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 8B8AC1A92AC1C3570030F5DC /* Build configuration list for PBXProject "rememberWords" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B8AC1A52AC1C3570030F5DC;
+			packageReferences = (
+				8B3968542BEF385C00F3F8A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 8B8AC1AF2AC1C3570030F5DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B8AC1AD2AC1C3570030F5DC /* rememberWords */,
+				8B8AC1C42AC1CDB30030F5DC /* RandomWordLearnedExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B8AC1AC2AC1C3570030F5DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B8AC1B92AC1C3590030F5DC /* Preview Assets.xcassets in Resources */,
+				8BBDC1402BEF469100CF6C2D /* GoogleService-Info.plist in Resources */,
+				8B8AC1B62AC1C3590030F5DC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B8AC1C32AC1CDB30030F5DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BBDC1412BEF469100CF6C2D /* GoogleService-Info.plist in Resources */,
+				8B8AC1D12AC1CDB50030F5DC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B8AC1AA2AC1C3570030F5DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B0C88392B20B1AA00B898FA /* WordDetailedView.swift in Sources */,
+				8BD9325E2AC8BC4100F49E24 /* CardView.swift in Sources */,
+				8B8AC1C02AC1C99A0030F5DC /* Word.swift in Sources */,
+				8B0C883B2B20B7CF00B898FA /* WordShuffleView.swift in Sources */,
+				8BD932572AC7F22000F49E24 /* test.swift in Sources */,
+				8BD932632AC8C64000F49E24 /* AddWordView.swift in Sources */,
+				8B8AC1B42AC1C3570030F5DC /* ContentView.swift in Sources */,
+				8BD932592AC8AB1900F49E24 /* HomeDecksView.swift in Sources */,
+				8BD932652AC8DFAC00F49E24 /* WordsView.swift in Sources */,
+				8B8AC1B22AC1C3570030F5DC /* rememberWordsApp.swift in Sources */,
+				8BD9325C2AC8B10000F49E24 /* DeckCardView.swift in Sources */,
+				8BD932612AC8C63000F49E24 /* AddDeckView.swift in Sources */,
+				8B0EF8EC2ACAA6E10010FA02 /* ToggleStateIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B8AC1C12AC1CDB30030F5DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B8AC1CF2AC1CDB40030F5DC /* RandomWordLearned.swift in Sources */,
+				8B8AC1CD2AC1CDB40030F5DC /* RandomWordLearnedBundle.swift in Sources */,
+				8B8AC1DC2AC303090030F5DC /* Word.swift in Sources */,
+				8B0EF8EF2ACAA6F20010FA02 /* CardView.swift in Sources */,
+				8BD932682AC93B3400F49E24 /* ToggleStateIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B8AC1D42AC1CDB50030F5DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B8AC1C42AC1CDB30030F5DC /* RandomWordLearnedExtension */;
+			targetProxy = 8B8AC1D32AC1CDB50030F5DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8B8AC1BA2AC1C3590030F5DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8B8AC1BB2AC1C3590030F5DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B8AC1BD2AC1C3590030F5DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = rememberWords/rememberWords.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_ASSET_PATHS = "\"rememberWords/Preview Content\"";
+				DEVELOPMENT_TEAM = JZNPKB7CRS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.candidohdiego.rememberWords;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8B8AC1BE2AC1C3590030F5DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = rememberWords/rememberWords.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_ASSET_PATHS = "\"rememberWords/Preview Content\"";
+				DEVELOPMENT_TEAM = JZNPKB7CRS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.candidohdiego.rememberWords;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		8B8AC1D72AC1CDB50030F5DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RandomWordLearnedExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = JZNPKB7CRS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RandomWordLearned/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RandomWordLearned;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.candidohdiego.rememberWords.RandomWordLearned;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B8AC1D82AC1CDB50030F5DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RandomWordLearnedExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = JZNPKB7CRS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RandomWordLearned/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RandomWordLearned;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.candidohdiego.rememberWords.RandomWordLearned;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B8AC1A92AC1C3570030F5DC /* Build configuration list for PBXProject "rememberWords" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B8AC1BA2AC1C3590030F5DC /* Debug */,
+				8B8AC1BB2AC1C3590030F5DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B8AC1BC2AC1C3590030F5DC /* Build configuration list for PBXNativeTarget "rememberWords" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B8AC1BD2AC1C3590030F5DC /* Debug */,
+				8B8AC1BE2AC1C3590030F5DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B8AC1D62AC1CDB50030F5DC /* Build configuration list for PBXNativeTarget "RandomWordLearnedExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B8AC1D72AC1CDB50030F5DC /* Debug */,
+				8B8AC1D82AC1CDB50030F5DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B3968542BEF385C00F3F8A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.25.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B3968552BEF385C00F3F8A7 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B3968542BEF385C00F3F8A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		8B3968572BEF385C00F3F8A7 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B3968542BEF385C00F3F8A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8B3968592BEF385C00F3F8A7 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B3968542BEF385C00F3F8A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		8B39685B2BEF385C00F3F8A7 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B3968542BEF385C00F3F8A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		8B39685D2BEF385C00F3F8A7 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B3968542BEF385C00F3F8A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8B8AC1A62AC1C3570030F5DC /* Project object */;
+}
