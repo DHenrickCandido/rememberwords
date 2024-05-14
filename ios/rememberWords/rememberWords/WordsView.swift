@@ -6,15 +6,20 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
+import FirebaseCore
+import FirebaseAuth
 
 struct WordsView: View {
-    @State var wordBank: [Word] = []
+    @State var wordBank: [WordNew] = []
     @State var selectedDeck: String
     @State var showAddWord: Bool = false
     @State var selectedCard: Int = 0
-    @State var selectedWord = Word(word: "", translation: "")
+    @State var selectedWord = WordNew(id: "", word: "", translation: "")
     @State private var navigateToSecondScreen = false
-
+    
+    @State var deckManager = DeckManager()
+    
     var body: some View {
         NavigationStack{
             VStack {
@@ -47,7 +52,6 @@ struct WordsView: View {
                 
                 .padding(16)
             }
-            
             .background(Color("PurplePrimary"))
             
             ScrollView{
@@ -55,7 +59,7 @@ struct WordsView: View {
                 LazyVGrid(columns: [GridItem(.flexible(minimum: 0, maximum: .infinity)), GridItem(.flexible(minimum: 0, maximum: .infinity))]) {
                     ForEach(wordBank) { word in
                         
-                        CardView(word: word.word, translation: word.translation, wordBank: $wordBank, selectedWord: $selectedCard)
+                        CardView(id: word.id, word: word.word, translation: word.translation, wordBank: $wordBank, selectedWord: $selectedCard)
                             .padding(6)
                             .onTapGesture {
                                 print("clicked")
@@ -65,7 +69,6 @@ struct WordsView: View {
                             }
                     }
                 }
-                // NavigationLink que é ativado quando navigateToSecondScreen é true
                 NavigationLink(destination: WordDetailedView(word: selectedWord), isActive: $navigateToSecondScreen) {
                     EmptyView() // Use EmptyView() como o conteúdo, pois não precisamos de nenhum conteúdo visível aqui
                 }
@@ -78,10 +81,34 @@ struct WordsView: View {
                     .interactiveDismissDisabled()
             }
             .onAppear(){
-                if let data = UserDefaults(suiteName: "group.com.diegohenrick.remember")?.data(forKey: "wordBank") {
-                    if let loadedWordBank = try? JSONDecoder().decode([Word].self, from: data) {
-                        wordBank = loadedWordBank
-                    }
+                fetchWords()
+            }
+        }
+    }
+    
+    func fetchWords() {
+        wordBank.removeAll()
+        let db = Firestore.firestore()
+        
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        
+        let ref = db.collection("Users").document(userID).collection("Deck")
+        
+        ref.getDocuments { snapshot, error in
+            if let error = error {
+                print("Erro ao buscar dados: \(error.localizedDescription)")
+                return
+            }
+            
+            if let snapshot = snapshot {
+                for document in snapshot.documents {
+                    let data = document.data()
+                    let id = data["id"] as? String ?? ""
+                    let word = data["word"] as? String ?? ""
+                    let translation = data["translation"] as? String ?? ""
+                    
+                    let wordCreated = WordNew(id: id, word: word, translation: translation)
+                    wordBank.append(wordCreated)
                 }
             }
         }

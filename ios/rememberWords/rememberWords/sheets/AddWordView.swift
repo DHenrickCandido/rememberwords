@@ -6,30 +6,35 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseAuth
+import FirebaseFirestore
 
-struct Example_test: View {
-    @State var showAddWord: Bool = false
-    @State var wordBank = [Word(word: "test", translation: "teste"),Word(word: "OIE", translation: "teste"), Word(word: "TCHAUUU", translation: "teste"), Word(word: "POGGERS", translation: "teste")]
-    
-    var body: some View {
-        Button("click me") {
-            showAddWord.toggle()
-        }
-        .sheet(isPresented: $showAddWord){
-            NewWordView(showAddWord: $showAddWord, wordBank: $wordBank)
-                .presentationDetents([.fraction(0.7)])
-                .interactiveDismissDisabled()
-        }
-
-    }
-}
+//struct Example_test: View {
+//    @State var showAddWord: Bool = false
+//    @State var wordBank = [Word(word: "test", translation: "teste"),Word(word: "OIE", translation: "teste"), Word(word: "TCHAUUU", translation: "teste"), Word(word: "POGGERS", translation: "teste")]
+//    
+//    var body: some View {
+//        Button("click me") {
+//            showAddWord.toggle()
+//        }
+//        .sheet(isPresented: $showAddWord){
+//            NewWordView(showAddWord: $showAddWord, wordBank: $wordBank)
+//                .presentationDetents([.fraction(0.7)])
+//                .interactiveDismissDisabled()
+//        }
+//
+//    }
+//}
 
 struct NewWordView: View {
     @Binding var showAddWord: Bool
     @State var word: String = ""
     @State var translation: String = ""
     
-    @Binding var wordBank: [Word]
+//    @Binding var wordBank: [Word]
+    @Binding var wordBank: [WordNew]
+    @State var deckManager = DeckManager()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 40){
@@ -50,15 +55,11 @@ struct NewWordView: View {
                         .foregroundColor(.gray)
                     
                 }
-                
                 Text("Add new word")
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
-                
             }
-            
-            //Fim qual envelope?
             VStack (alignment: .leading) {
                 Text("New word:")
                     .font(.headline)
@@ -108,24 +109,49 @@ struct NewWordView: View {
                     .background(Color("GreenPrimary"))
                     .cornerRadius(8)
                     .onTapGesture {
-                        wordBank.append(Word(word: word, translation: translation))
-                        
-                        let data = try? JSONEncoder().encode(wordBank)
-                        
-                        // Use UserDefaults com o suiteName
-                        if let suiteDefaults = UserDefaults(suiteName: "group.com.diegohenrick.remember") {
-                            suiteDefaults.set(data, forKey: "wordBank")
-                        }
+                        addWord(word: WordNew(id: createId(word: word), word: word, translation: translation))
+//                        deckManager.fetchWords()
+//                        wordBank = deckManager.wordsList
+//                        wordBank.append(Word(word: word, translation: translation))
+//                        
+//                        let data = try? JSONEncoder().encode(wordBank)
+//                        
+//                        // Use UserDefaults com o suiteName
+//                        if let suiteDefaults = UserDefaults(suiteName: "group.com.diegohenrick.remember") {
+//                            suiteDefaults.set(data, forKey: "wordBank")
+//                        }
                         showAddWord.toggle()
                     }
-                
                 Spacer()
             }
         }.padding(16)
     }
-    
+    public func createId(word: String) -> String {
+        let formatter1 = DateFormatter()
+        formatter1.dateFormat = "yyyyMMddHHmmssSSS"
+        let today = Date()
+        return String(word + formatter1.string(from: today)).replacingOccurrences(of: " ", with: "")
+    }
+    func addWord(word: WordNew) {
+        let db = Firestore.firestore()
+        
+        let today = Date.now
+        let formatter1 = DateFormatter()
+        formatter1.dateStyle = .long
+        
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        let ref = db.collection("Users").document(userID).collection("Deck").document(word.id)
+        
+        ref.setData(["id": word.id, "word": word.word, "translation": word.translation]) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        wordBank.append(word)
+        
+    }
 }
 
-#Preview {
-    Example_test()
-}
+//#Preview {
+//    Example_test()
+//}

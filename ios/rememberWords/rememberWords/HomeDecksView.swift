@@ -12,7 +12,6 @@ struct HomeDecksView: View {
     var body: some View {
         ZStack {
             
-            //Header (logo + mascote)
             VStack {
                 ZStack (alignment: .leading) {
                     Rectangle()

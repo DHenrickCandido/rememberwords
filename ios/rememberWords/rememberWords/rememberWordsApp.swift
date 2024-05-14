@@ -7,22 +7,22 @@
 
 import SwiftUI
 import FirebaseCore
-
-class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-
-    return true
-  }
-}
+import FirebaseAuth
+import Firebase
 
 
 @main
 struct rememberWordsApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    @State var wordBank: [Word] = []
+    init() {
+        FirebaseApp.configure()
+          do {
+              try Auth.auth().useUserAccessGroup("\(teamID).com.candidohdiego.rememberWords")
+          } catch {
+              print(error.localizedDescription)
+          }
+    }
+    @State var wordBank: [WordNew] = []
     var body: some Scene {
         WindowGroup {
             TabView {
@@ -36,14 +36,25 @@ struct rememberWordsApp: App {
                         Label("Shuffle", systemImage: "shuffle")
                     }
             }.onAppear(){
-                if let data = UserDefaults(suiteName: "group.com.diegohenrick.remember")?.data(forKey: "wordBank") {
-                    if let loadedWordBank = try? JSONDecoder().decode([Word].self, from: data) {
-                        wordBank = loadedWordBank
-                    }
-                }
-            
+                anonymous()
+
+            }
         }
+    }
+    
+    func anonymous() {
+        Auth.auth().signInAnonymously { authResult, error in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
         }
+        
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+
+        if let suiteDefaults = UserDefaults(suiteName: "group.com.diegohenrick.remember") {
+            suiteDefaults.set(userID, forKey: "userID")
+        }
+        
     }
 }
 

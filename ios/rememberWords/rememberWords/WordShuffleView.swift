@@ -6,76 +6,12 @@
 //
 
 import SwiftUI
-
-//struct WordShuffleView: View {
-//    var wordsShuffle: [Word]
-//    @State var isTurned: Bool = true
-//    @State var showingIndex: Int = 0
-//    
-//    var body: some View {
-//        VStack {
-//            Spacer()
-//            HStack {
-//                Spacer()
-//                Text(isTurned ? wordsShuffle[showingIndex].word : wordsShuffle[showingIndex].translation)
-//                    .font(.title)
-//                    .foregroundStyle(.black)
-//                    .fontWeight(.semibold)
-//                    .padding(.horizontal)
-//                Spacer()
-//            }
-//            Spacer()
-//            
-//            Button(action: {
-//                withAnimation {
-//                    isTurned.toggle()
-//                }
-//            }, label: {
-//                Text("Turn")
-//                    .font(.title2)
-//                    .fontWeight(.semibold)
-//                    .foregroundStyle(.white)
-//                    .font(.headline)
-//                    .frame(maxWidth: 100)
-//                    .frame(height: 48)
-//                    .background(Color("GreenPrimary"))
-//                    .cornerRadius(10)
-//                    .padding(.horizontal)
-//                
-//            }).padding(.bottom, 100)
-//            
-//        }
-//        .background(){
-//            Color("GreenSecondary")
-//        }
-//        .ignoresSafeArea()
-//        .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
-//                            .onEnded({ value in
-//                                if value.translation.width < 0 {
-//                                    // left
-//                                    if showingIndex < wordsShuffle.count-1 {
-//                                        showingIndex += 1
-//                                    }
-//                                }
-//
-//                                if value.translation.width > 0 {
-//                                    if showingIndex > 0 {
-//                                        showingIndex -= 1
-//                                    }
-//                                }
-//                                if value.translation.height < 0 {
-//                                    // up
-//                                }
-//
-//                                if value.translation.height > 0 {
-//                                    // down
-//                                }
-//                            }))
-//    }
-//}
+import FirebaseFirestore
+import FirebaseCore
+import FirebaseAuth
 
 struct WordShuffleView: View {
-    @State var wordsShuffle: [Word]
+    @State var wordsShuffle: [WordNew]
     @State var showingIndex: Int = 0
     
     @GestureState private var translation: CGSize = .zero
@@ -118,14 +54,8 @@ struct WordShuffleView: View {
             Spacer()
         }
         .onAppear(){
-            if let data = UserDefaults(suiteName: "group.com.diegohenrick.remember")?.data(forKey: "wordBank") {
-                if let loadedWordBank = try? JSONDecoder().decode([Word].self, from: data) {
-                    wordsShuffle = loadedWordBank
-                }
-            }
+            fetchWords()
         }
-//        .background(Color("GreenSecondary"))
-//        .ignoresSafeArea()
     }
     
     private func onDragEnded(drag: DragGesture.Value) {
@@ -142,6 +72,34 @@ struct WordShuffleView: View {
             if showingIndex < wordsShuffle.count - 1 {
                 withAnimation {
                     showingIndex += 1
+                }
+            }
+        }
+    }
+    
+    func fetchWords() {
+        wordsShuffle.removeAll()
+        let db = Firestore.firestore()
+        
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        
+        let ref = db.collection("Users").document(userID).collection("Deck")
+        
+        ref.getDocuments { snapshot, error in
+            if let error = error {
+                print("Erro ao buscar dados: \(error.localizedDescription)")
+                return
+            }
+            
+            if let snapshot = snapshot {
+                for document in snapshot.documents {
+                    let data = document.data()
+                    let id = data["id"] as? String ?? ""
+                    let word = data["word"] as? String ?? ""
+                    let translation = data["translation"] as? String ?? ""
+                    
+                    let wordCreated = WordNew(id: id, word: word, translation: translation)
+                    wordsShuffle.append(wordCreated)
                 }
             }
         }
@@ -198,6 +156,6 @@ enum DragState {
 }
 
 
-#Preview {
-    WordShuffleView(wordsShuffle: [Word(word: "Hello", translation: "Ola"),Word(word: "Award", translation: "Premio")])
-}
+//#Preview {
+//    WordShuffleView(wordsShuffle: [Word(word: "Hello", translation: "Ola"),Word(word: "Award", translation: "Premio")])
+//}

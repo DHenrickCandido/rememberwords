@@ -7,11 +7,15 @@
 
 import SwiftUI
 import AppIntents
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseCore
 
 struct ToggleStateIntent: AppIntent {
-
-    
     static var title: LocalizedStringResource = "idk what im doing"
+    
+    @Parameter(title: "idWord")
+    var idWord: String
     
     @Parameter(title: "word")
     var word: String
@@ -20,53 +24,46 @@ struct ToggleStateIntent: AppIntent {
     var translation: String
     
     @Parameter(title: "isTurned")
-    var isTurned: String
+    var isTurned: Bool
     
     @Parameter(title: "buttonActed")
     var buttonActed: String
     
     init() {
-
+        
     }
 
-    init(word: String, translation: String, isTurned: String, buttonActed: String) {
+    init(idWord: String, word: String, translation: String, isTurned: Bool, buttonActed: String) {
+        self.idWord = idWord
         self.word = word
         self.translation = translation
         self.isTurned = isTurned
         self.buttonActed = buttonActed
     }
     
-
-    
     func perform() async throws -> some IntentResult {
-        if self.isTurned == "true" {
-            self.isTurned = "false"
+        if self.isTurned == true {
+            self.isTurned = false
+            updateSelectedWordSide(isTurned: "false")
         } else {
-            self.isTurned = "true"
-        }
-        
-        let wordSelected: [String] = [self.word, self.translation, self.isTurned, self.buttonActed]
-        
-        let data = try? JSONEncoder().encode(wordSelected)
-        // Use UserDefaults com o suiteName
-        if let suiteDefaults = UserDefaults(suiteName: "group.com.diegohenrick.remember") {
-            suiteDefaults.set(data, forKey: "wordSelected")
-        }
-        
+            self.isTurned = true
+            updateSelectedWordSide(isTurned: "true")
 
-        
-        print("PASSOU PELO BOTAO")
+        }
         
         return .result()
     }
     
-    func loadWordSelected() -> [String]? {
-        if let data = UserDefaults(suiteName: "group.com.diegohenrick.remember")?.data(forKey: "wordSelected") {
-            if let loadedWordSelected = try? JSONDecoder().decode([String].self, from: data) {
-                return loadedWordSelected
+    func updateSelectedWordSide(isTurned: String) {
+        let db = Firestore.firestore()
+        
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        let ref = db.collection("Users").document(userID).collection("SelectedWord").document(idWord)
+
+        ref.updateData(["id": idWord, "word": word, "translation": translation, "isTurned": isTurned]) { error in
+            if let error = error {
+                print(error.localizedDescription)
             }
         }
-        
-        return nil
     }
 }

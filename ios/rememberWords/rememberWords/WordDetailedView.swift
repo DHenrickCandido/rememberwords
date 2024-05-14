@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WordDetailedView: View {
-    var word: Word
+    @State var word: WordNew
     @State var isTurned: Bool = true
     
     var body: some View {
@@ -55,5 +55,5 @@ struct WordDetailedView: View {
 }
 
 #Preview {
-    WordDetailedView(word: Word(word: "Hello", translation: "Ola"))
+    WordDetailedView(word: WordNew(id: "", word: "Hello", translation: "Ola"))
 }

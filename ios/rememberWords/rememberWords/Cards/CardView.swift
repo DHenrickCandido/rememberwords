@@ -6,13 +6,20 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseAuth
+import FirebaseFirestore
 
 struct CardView: View {
+    @State var id: String
     @State var word: String
     @State var translation: String
     @State var isTurned: Bool = true
-    @Binding var wordBank: [Word]
+//    @Binding var wordBank: [Word]
+    @Binding var wordBank: [WordNew]
     @Binding var selectedWord: Int
+    
+    @State var deckManager = DeckManager()
     
     var body: some View {
         VStack{
@@ -25,13 +32,15 @@ struct CardView: View {
                             .onTapGesture {
                                 withAnimation {
                                     //                                wordBank.remove(at: selectedWord)
-                                    wordBank.removeAll { $0 == Word(word: word, translation: translation) }
-                                    let data = try? JSONEncoder().encode(wordBank)
-                                    
-                                    // Use UserDefaults com o suiteName
-                                    if let suiteDefaults = UserDefaults(suiteName: "group.com.diegohenrick.remember") {
-                                        suiteDefaults.set(data, forKey: "wordBank")
-                                    }
+//                                    wordBank.removeAll { $0 == Word(word: word, translation: translation) }
+//                                    let data = try? JSONEncoder().encode(wordBank)
+//                                    
+//                                    // Use UserDefaults com o suiteName
+//                                    if let suiteDefaults = UserDefaults(suiteName: "group.com.diegohenrick.remember") {
+//                                        suiteDefaults.set(data, forKey: "wordBank")
+//                                    }
+//                                    deckManager.removeWord(id: id)
+                                    removeWord(id: id)
                                 }
                             }
                         Spacer()
@@ -80,6 +89,29 @@ struct CardView: View {
         .cornerRadius(16)
         .rotation3DEffect(.degrees(isTurned ? 0 : 360), axis: (x: 0, y: 1, z: 0))
         .animation(.easeInOut, value: isTurned)
+    }
+    func deleteWord(id: String) {
+        for i in 0..<wordBank.count {
+            if wordBank[i].id == id {
+                wordBank.remove(at: i)
+            }
+        }
+    }
+    
+    func removeWord(id: String) {
+        deleteWord(id: id)
+
+        let db = Firestore.firestore()
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        
+        db.collection("Users").document(userID).collection("Deck").document(id).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
+
     }
 }
 
