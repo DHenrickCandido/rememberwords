@@ -43,10 +43,8 @@ struct ToggleStateIntent: AppIntent {
     
     func perform() async throws -> some IntentResult {
         if self.isTurned == true {
-            self.isTurned = false
             updateSelectedWordSide(isTurned: "false")
-        } else {
-            self.isTurned = true
+        } else if self.isTurned == false {
             updateSelectedWordSide(isTurned: "true")
 
         }
@@ -58,7 +56,7 @@ struct ToggleStateIntent: AppIntent {
         let db = Firestore.firestore()
         
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        let ref = db.collection("Users").document(userID).collection("SelectedWord").document(idWord)
+        let ref = db.collection("Users").document(userID).collection("SelectedWord").document("word")
 
         ref.updateData(["id": idWord, "word": word, "translation": translation, "isTurned": isTurned]) { error in
             if let error = error {

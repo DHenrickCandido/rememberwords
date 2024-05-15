@@ -18,24 +18,28 @@ struct Provider: TimelineProvider {
     @State var isTurned = false
     
     init() {
-        updateSelectedWord(selectNew: true)
+//        updateSelectedWord(selectNew: true)
+        selectedWord = updateSelectedWord()
     }
     func placeholder(in context: Context) -> SimpleEntry {
-        updateSelectedWord(selectNew: true)
+        selectedWord = updateSelectedWord()
 
-        return SimpleEntry(date: Date(), selectedWordEntry: WordNew(id: "", word: "No Words", translation: "No Words"), isTurned: false)
+        return SimpleEntry(date: Date(), selectedWordEntry: WordNew(id: selectedWord.id, word: selectedWord.word, translation: selectedWord.translation), isTurned: isTurned)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        
+        selectedWord = updateSelectedWord()
+
         let entry = SimpleEntry(date: Date(), selectedWordEntry: selectedWord, isTurned: isTurned)
-        
+        print("testsetestsetsetset")
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
-        
+//        updateSelectedWord(selectNew: true)
+        selectedWord = updateSelectedWord()
+
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
                 
@@ -49,6 +53,7 @@ struct Provider: TimelineProvider {
     
     func updateSelectedWord(selectNew: Bool) {
 //        wordBank.removeAll()
+        var wordsBank: [WordNew] = []
         let db = Firestore.firestore()
         
         guard let userID = Auth.auth().currentUser?.uid else { return }
@@ -66,30 +71,48 @@ struct Provider: TimelineProvider {
                     let isTurnedData = data["isTurned"] as? Bool ?? false
                     let wordCreated = WordNew(id: id, word: word, translation: translation)
                     isTurned = isTurnedData
-                    wordBank.append(wordCreated)
+                    wordsBank.append(wordCreated)
                 }
             }
-        }
-        if selectNew == true {
-            selectedWord = wordBank.randomElement() ?? WordNew(id: "teste", word: "", translation: "")
-            let ref = db.collection("Users").document(userID).collection("SelectedWord").document("word")
+            var selectedWordNew = wordsBank.randomElement() ?? WordNew(id: "teste", word: "", translation: "")
+            let ref2 = db.collection("Users").document(userID).collection("SelectedWord").document("word")
             
-            ref.setData(["id": selectedWord.id, "word": selectedWord.word, "translation": selectedWord.translation, "isTurned": "false"]) { error in
+            ref2.setData(["id": selectedWordNew.id, "word": selectedWordNew.word, "translation": selectedWordNew.translation, "isTurned": "false"]) { error in
                 if let error = error {
                     print(error.localizedDescription)
                 }
             }
+            selectedWord = selectedWordNew
+
         }
     }
     
-    func updateSelectedWord() {
-        selectedWord = wordBank.randomElement() ?? WordNew(id: "teste", word: "", translation: "")
+    func updateSelectedWord() -> WordNew {
+        var selectedWordNova = WordNew(id: "", word: "", translation: "")
         let db = Firestore.firestore()
         
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-
-
+        guard let userID = Auth.auth().currentUser?.uid else { return WordNew(id: "", word: "", translation: "") }
+        let ref = db.collection("Users").document(userID).collection("Deck")
+        
+        ref.getDocuments { snapshot, error in
+            
+            if let snapshot = snapshot {
+                for document in snapshot.documents {
+                    let data = document.data()
+                    let id = data["id"] as? String ?? ""
+                    let word = data["word"] as? String ?? ""
+                    let translation = data["translation"] as? String ?? ""
+                    let isTurnedData = data["isTurned"] as? Bool ?? false
+                    let wordCreated = WordNew(id: id, word: word, translation: translation)
+                    isTurned = isTurnedData
+                    selectedWordNova = wordCreated
+                    
+                }
+            }
+        }
+        return selectedWordNova
     }
+
 }
 
 struct SimpleEntry: TimelineEntry {
