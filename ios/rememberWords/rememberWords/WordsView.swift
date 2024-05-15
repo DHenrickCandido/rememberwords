@@ -82,6 +82,7 @@ struct WordsView: View {
             }
             .onAppear(){
                 fetchWords()
+                
             }
         }
     }
@@ -113,6 +114,8 @@ struct WordsView: View {
             }
         }
     }
+    
+    
 }
 
 #Preview {

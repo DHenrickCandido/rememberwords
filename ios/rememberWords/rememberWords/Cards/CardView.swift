@@ -31,15 +31,6 @@ struct CardView: View {
                             .opacity(0.2)
                             .onTapGesture {
                                 withAnimation {
-                                    //                                wordBank.remove(at: selectedWord)
-//                                    wordBank.removeAll { $0 == Word(word: word, translation: translation) }
-//                                    let data = try? JSONEncoder().encode(wordBank)
-//                                    
-//                                    // Use UserDefaults com o suiteName
-//                                    if let suiteDefaults = UserDefaults(suiteName: "group.com.diegohenrick.remember") {
-//                                        suiteDefaults.set(data, forKey: "wordBank")
-//                                    }
-//                                    deckManager.removeWord(id: id)
                                     removeWord(id: id)
                                 }
                             }
@@ -51,15 +42,10 @@ struct CardView: View {
                             .font(.title3)
                             .foregroundStyle(.black)
                             .fontWeight(.semibold)
-//                            .padding(.vertical)
                             .multilineTextAlignment(.center)
                             .lineLimit(nil)
-//                            .frame(height: 120)
-//                        Spacer()
-                    }
 
-                        
-//                    Spacer()
+                    }
                     Spacer()
                     Button(action: {
                         withAnimation {
@@ -73,7 +59,6 @@ struct CardView: View {
                             .frame(height: 32)
                             .background(Color("GreenPrimary"))
                             .cornerRadius(10)
-//                            .padding(.horizontal)
                         
                     })
                     

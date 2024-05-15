@@ -24,10 +24,7 @@ class DeckManager: ObservableObject {
         let ref = db.collection("Users").document(userID).collection("Deck")
 
         ref.getDocuments { snapshot, error in
-//            guard error == nil else {
-//                print(error!.localizedDescription)
-//                return
-//            }
+
             if let snapshot = snapshot {
                 for document in snapshot.documents {
                     let data = document.data()
