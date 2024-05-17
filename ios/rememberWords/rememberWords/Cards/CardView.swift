@@ -15,7 +15,6 @@ struct CardView: View {
     @State var word: String
     @State var translation: String
     @State var isTurned: Bool = true
-//    @Binding var wordBank: [Word]
     @Binding var wordBank: [WordNew]
     @Binding var selectedWord: Int
     

@@ -10,50 +10,27 @@ import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
 
-//struct Example_test: View {
-//    @State var showAddWord: Bool = false
-//    @State var wordBank = [Word(word: "test", translation: "teste"),Word(word: "OIE", translation: "teste"), Word(word: "TCHAUUU", translation: "teste"), Word(word: "POGGERS", translation: "teste")]
-//    
-//    var body: some View {
-//        Button("click me") {
-//            showAddWord.toggle()
-//        }
-//        .sheet(isPresented: $showAddWord){
-//            NewWordView(showAddWord: $showAddWord, wordBank: $wordBank)
-//                .presentationDetents([.fraction(0.7)])
-//                .interactiveDismissDisabled()
-//        }
-//
-//    }
-//}
 
 struct NewWordView: View {
     @Binding var showAddWord: Bool
     @State var word: String = ""
     @State var translation: String = ""
-    
-//    @Binding var wordBank: [Word]
     @Binding var wordBank: [WordNew]
     @State var deckManager = DeckManager()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 40){
-            
             ZStack {
-                
                 HStack {
                     Image(systemName: "xmark")
                         .fontWeight(.bold)
                         .onTapGesture {
                             showAddWord.toggle()
                         }
-                    
                     Spacer()
-                    
                     Text("")
                         .font(.subheadline)
                         .foregroundColor(.gray)
-                    
                 }
                 Text("Add new word")
                     .font(.title2)
@@ -93,8 +70,6 @@ struct NewWordView: View {
                             .background(Color("GreenSecondary"))
                             .cornerRadius(8)
                     }
-                    
-                    
                 }
                 Spacer()
                 
@@ -111,16 +86,6 @@ struct NewWordView: View {
                         .cornerRadius(8)
                         .onTapGesture {
                             addWord(word: WordNew(id: createId(word: word), word: word, translation: translation))
-                            //                        deckManager.fetchWords()
-                            //                        wordBank = deckManager.wordsList
-                            //                        wordBank.append(Word(word: word, translation: translation))
-                            //                        
-                            //                        let data = try? JSONEncoder().encode(wordBank)
-                            //                        
-                            //                        // Use UserDefaults com o suiteName
-                            //                        if let suiteDefaults = UserDefaults(suiteName: "group.com.diegohenrick.remember") {
-                            //                            suiteDefaults.set(data, forKey: "wordBank")
-                            //                        }
                             showAddWord.toggle()
                         }
                     Spacer()
@@ -151,10 +116,5 @@ struct NewWordView: View {
             }
         }
         wordBank.append(word)
-        
     }
 }
-
-//#Preview {
-//    Example_test()
-//}

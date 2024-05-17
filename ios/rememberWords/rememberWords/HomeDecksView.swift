@@ -11,14 +11,12 @@ struct HomeDecksView: View {
     @State var wordBank: [Word] = []
     var body: some View {
         ZStack {
-            
             VStack {
                 ZStack (alignment: .leading) {
                     Rectangle()
                         .frame(height: 160)
                         .foregroundColor(Color("PurplePrimary"))
                     VStack{
-                        
                         HStack () {
                             VStack{
                                 Text("Decks")
@@ -41,7 +39,6 @@ struct HomeDecksView: View {
                     }.padding(.top,32)
 
                 }
-                
                 Spacer()
             }.ignoresSafeArea()
             //Fim do Header

@@ -17,7 +17,6 @@ struct WordsView: View {
     @State var selectedCard: Int = 0
     @State var selectedWord = WordNew(id: "", word: "", translation: "")
     @State private var navigateToSecondScreen = false
-    
     @State var deckManager = DeckManager()
     
     var body: some View {

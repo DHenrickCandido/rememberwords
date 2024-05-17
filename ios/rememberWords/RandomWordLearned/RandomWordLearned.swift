@@ -18,9 +18,6 @@ struct Provider: TimelineProvider {
         var selectedWordNova = WordNew(id: "", word: "No Words", translation: "No Words")
 
         return SimpleEntry(date: Date(), selectedWordEntry: selectedWordNova, isTurned: isTurned)
-        
-        
-        
     }
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
@@ -105,7 +102,6 @@ struct Provider: TimelineProvider {
 
             
         } else {
-            print("CUUUU PASSEI")
             UserDefaults.standard.set(false, forKey: "isButtonPressed")
 
             let db = Firestore.firestore()

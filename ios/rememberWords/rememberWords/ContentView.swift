@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @State private var word: String = ""
     @State private var translation: String = ""
-    
     @State var wordBank: [Word] = []
     
     var body: some View {
@@ -51,7 +50,6 @@ struct ContentView: View {
             
             Button {
                 wordBank.append(Word(word: word, translation: translation))
-//                wordBank.removeAll()
                 saveWordBank()
 
             } label: {

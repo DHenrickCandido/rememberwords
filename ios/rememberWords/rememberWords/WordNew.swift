@@ -8,7 +8,6 @@
 import Foundation
 
 struct WordNew: Identifiable, Encodable, Decodable, Equatable {
-//    var id = UUID()
     var id: String
     var word: String
     var translation: String

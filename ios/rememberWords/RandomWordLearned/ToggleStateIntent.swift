@@ -48,8 +48,6 @@ struct ToggleStateIntent: AppIntent {
             updateSelectedWordSide(isTurned: true)
         }
         
-//        UserDefaults.standard.set(true, forKey: "isButtonPressed")
-
         return .result()
     }
     
