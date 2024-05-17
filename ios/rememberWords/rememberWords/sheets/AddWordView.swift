@@ -60,71 +60,74 @@ struct NewWordView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.black)
             }
-            VStack (alignment: .leading) {
-                Text("New word:")
-                    .font(.headline)
-                    .bold()
-                
-                HStack(alignment: .top, spacing: 10) {
-                    TextField("Type the word you learned", text: $word)
-                        .font(.callout)
-                        .foregroundColor(.black)
-                        .multilineTextAlignment(.leading)
-                        .padding(16)
-                        .frame(maxWidth: .infinity)
-                        .background(Color("GreenSecondary"))
-                        .cornerRadius(8)
-                }
-            }
-            
-            VStack (alignment: .leading) {
-                Text("Translation:")
-                    .font(.headline)
-                    .bold()
-                
-                HStack(alignment: .top, spacing: 10) {
-                    TextField("Type the translation", text: $translation)
-                        .font(.callout)
-                        .foregroundColor(.black)
-                        .multilineTextAlignment(.leading)
-                        .padding(16)
-                        .frame(maxWidth: .infinity)
-                        .background(Color("GreenSecondary"))
-                        .cornerRadius(8)
-                }
-                
-                
-            }
-            Spacer()
-            
-            HStack {
-                
-
-                Spacer()
-                Text("Add")
-                    .font(.body)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .frame(width: 340, height: 54)
-                    .background(Color("GreenPrimary"))
-                    .cornerRadius(8)
-                    .onTapGesture {
-                        addWord(word: WordNew(id: createId(word: word), word: word, translation: translation))
-//                        deckManager.fetchWords()
-//                        wordBank = deckManager.wordsList
-//                        wordBank.append(Word(word: word, translation: translation))
-//                        
-//                        let data = try? JSONEncoder().encode(wordBank)
-//                        
-//                        // Use UserDefaults com o suiteName
-//                        if let suiteDefaults = UserDefaults(suiteName: "group.com.diegohenrick.remember") {
-//                            suiteDefaults.set(data, forKey: "wordBank")
-//                        }
-                        showAddWord.toggle()
+            ScrollView{
+                VStack (alignment: .leading) {
+                    Text("New word:")
+                        .font(.headline)
+                        .bold()
+                    
+                    HStack(alignment: .top, spacing: 10) {
+                        TextField("Type the word you learned", text: $word)
+                            .font(.callout)
+                            .foregroundColor(.black)
+                            .multilineTextAlignment(.leading)
+                            .padding(16)
+                            .frame(maxWidth: .infinity)
+                            .background(Color("GreenSecondary"))
+                            .cornerRadius(8)
                     }
+                }
+                
+                VStack (alignment: .leading) {
+                    Text("Translation:")
+                        .font(.headline)
+                        .bold()
+                    
+                    HStack(alignment: .top, spacing: 10) {
+                        TextField("Type the translation", text: $translation)
+                            .font(.callout)
+                            .foregroundColor(.black)
+                            .multilineTextAlignment(.leading)
+                            .padding(16)
+                            .frame(maxWidth: .infinity)
+                            .background(Color("GreenSecondary"))
+                            .cornerRadius(8)
+                    }
+                    
+                    
+                }
                 Spacer()
+                
+                HStack {
+                    
+                    
+                    Spacer()
+                    Text("Add")
+                        .font(.body)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(width: 340, height: 54)
+                        .background(Color("GreenPrimary"))
+                        .cornerRadius(8)
+                        .onTapGesture {
+                            addWord(word: WordNew(id: createId(word: word), word: word, translation: translation))
+                            //                        deckManager.fetchWords()
+                            //                        wordBank = deckManager.wordsList
+                            //                        wordBank.append(Word(word: word, translation: translation))
+                            //                        
+                            //                        let data = try? JSONEncoder().encode(wordBank)
+                            //                        
+                            //                        // Use UserDefaults com o suiteName
+                            //                        if let suiteDefaults = UserDefaults(suiteName: "group.com.diegohenrick.remember") {
+                            //                            suiteDefaults.set(data, forKey: "wordBank")
+                            //                        }
+                            showAddWord.toggle()
+                        }
+                    Spacer()
+                }
             }
         }.padding(16)
+            
     }
     public func createId(word: String) -> String {
         let formatter1 = DateFormatter()

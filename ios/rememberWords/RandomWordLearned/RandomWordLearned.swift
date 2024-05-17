@@ -36,31 +36,105 @@ struct Provider: TimelineProvider {
         var entries: [SimpleEntry] = []
         let currentDate = Date()
         
-        let db = Firestore.firestore()
-
-        guard let userID = Auth.auth().currentUser?.uid else { return }
+        let isButtonPressed = UserDefaults.standard.bool(forKey: "isButtonPressed")
         
-        let docRef = db.collection("Users").document(userID).collection("SelectedWord").document("word")
+        if isButtonPressed == false || isButtonPressed == nil {
+            print("TEST CUUUU")
+            let db = Firestore.firestore()
 
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let data = document.data()
-                
-                let id = data?["id"] as? String ?? ""
-                let word = data?["word"] as? String ?? ""
-                let translation = data?["translation"] as? String ?? ""
-                let isTurned = data?["isTurned"] as? Bool ?? false
-                let wordCreated = WordNew(id: id, word: word, translation: translation)
-                
-                let entry = SimpleEntry(date: Date(), selectedWordEntry: wordCreated, isTurned: isTurned)
-                entries.append(entry)
-                
-            } else {
-                print("Document does not exist")
+            guard let userID = Auth.auth().currentUser?.uid else { return }
+
+            let ref = db.collection("Users").document(userID).collection("Deck")
+
+            ref.getDocuments { snapshot, error in
+                if let snapshot = snapshot {
+                    var wordsList: [WordNew] = []
+
+                    for document in snapshot.documents {
+                        let data = document.data()
+
+                        let id = data["id"] as? String ?? ""
+                        let word = data["word"] as? String ?? ""
+                        let translation = data["translation"] as? String ?? ""
+
+                        let wordCreated = WordNew(id: id, word: word, translation: translation)
+                        wordsList.append(wordCreated)
+                    }
+
+                    if !wordsList.isEmpty {
+                        let randomIndex = Int.random(in: 0..<wordsList.count)
+                        let randomWord = wordsList[randomIndex]
+
+                        let randomWordRef = db.collection("Users").document(userID).collection("SelectedWord").document("word")
+                        randomWordRef.setData(["id": randomWord.id, "word": randomWord.word, "translation": randomWord.translation, "isTurned": false]) { error in
+                            if let error = error {
+                                print("Error adding random word: \(error)")
+                            } else {
+                                print("Random word added successfully")
+                            }
+                        }
+                    }
+                } else {
+                    print("Error getting documents: \(error)")
+                }
             }
-            let timeline = Timeline(entries: entries, policy: .after(Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)!))
-            completion(timeline)
+            
+            guard let userID = Auth.auth().currentUser?.uid else { return }
+            
+            let docRef = db.collection("Users").document(userID).collection("SelectedWord").document("word")
+            
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let data = document.data()
+                    
+                    let id = data?["id"] as? String ?? ""
+                    let word = data?["word"] as? String ?? ""
+                    let translation = data?["translation"] as? String ?? ""
+                    let isTurned = data?["isTurned"] as? Bool ?? false
+                    let wordCreated = WordNew(id: id, word: word, translation: translation)
+                    
+                    let entry = SimpleEntry(date: Date(), selectedWordEntry: wordCreated, isTurned: isTurned)
+                    entries.append(entry)
+                    
+                } else {
+                    print("Document does not exist")
+                }
+                let timeline = Timeline(entries: entries, policy: .after(Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)!))
+                completion(timeline)
+            }
+
+            
+        } else {
+            print("CUUUU PASSEI")
+            UserDefaults.standard.set(false, forKey: "isButtonPressed")
+
+            let db = Firestore.firestore()
+            
+            guard let userID = Auth.auth().currentUser?.uid else { return }
+            
+            let docRef = db.collection("Users").document(userID).collection("SelectedWord").document("word")
+            
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let data = document.data()
+                    
+                    let id = data?["id"] as? String ?? ""
+                    let word = data?["word"] as? String ?? ""
+                    let translation = data?["translation"] as? String ?? ""
+                    let isTurned = data?["isTurned"] as? Bool ?? false
+                    let wordCreated = WordNew(id: id, word: word, translation: translation)
+                    
+                    let entry = SimpleEntry(date: Date(), selectedWordEntry: wordCreated, isTurned: isTurned)
+                    entries.append(entry)
+                    
+                } else {
+                    print("Document does not exist")
+                }
+                let timeline = Timeline(entries: entries, policy: .after(Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)!))
+                completion(timeline)
+            }
         }
+        
     }
 
 }
