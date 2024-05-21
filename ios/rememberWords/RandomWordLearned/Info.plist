@@ -7,5 +7,9 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.widgetkit-extension</string>
 	</dict>
+	<key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
+	<false/>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Need tracking for analytics and to deliver a tailored experience</string>
 </dict>
 </plist>

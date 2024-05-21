@@ -40,6 +40,8 @@
 		8BBDC1512BF000E000CF6C2D /* WordNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDC14F2BF000E000CF6C2D /* WordNew.swift */; };
 		8BBDC1592BF3DCAE00CF6C2D /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDC1582BF3DCAE00CF6C2D /* Secrets.swift */; };
 		8BBDC15A2BF3DCAE00CF6C2D /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDC1582BF3DCAE00CF6C2D /* Secrets.swift */; };
+		8BBDC15E2BFC236200CF6C2D /* ToggleRandomIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDC15D2BFC236200CF6C2D /* ToggleRandomIntent.swift */; };
+		8BBDC15F2BFC236200CF6C2D /* ToggleRandomIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDC15D2BFC236200CF6C2D /* ToggleRandomIntent.swift */; };
 		8BD932572AC7F22000F49E24 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD932562AC7F22000F49E24 /* test.swift */; };
 		8BD932592AC8AB1900F49E24 /* HomeDecksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD932582AC8AB1900F49E24 /* HomeDecksView.swift */; };
 		8BD9325C2AC8B10000F49E24 /* DeckCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9325B2AC8B10000F49E24 /* DeckCardView.swift */; };
@@ -93,6 +95,7 @@
 		8BBDC1422BEF4B1200CF6C2D /* DeckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckManager.swift; sourceTree = "<group>"; };
 		8BBDC14F2BF000E000CF6C2D /* WordNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordNew.swift; sourceTree = "<group>"; };
 		8BBDC1582BF3DCAE00CF6C2D /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		8BBDC15D2BFC236200CF6C2D /* ToggleRandomIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRandomIntent.swift; sourceTree = "<group>"; };
 		8BC320FE2AC31BE3007D845F /* rememberWords.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rememberWords.entitlements; sourceTree = "<group>"; };
 		8BD932552AC5A88600F49E24 /* RandomWordLearnedExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RandomWordLearnedExtension.entitlements; sourceTree = "<group>"; };
 		8BD932562AC7F22000F49E24 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
@@ -200,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				8B8AC1CE2AC1CDB40030F5DC /* RandomWordLearned.swift */,
+				8BBDC15D2BFC236200CF6C2D /* ToggleRandomIntent.swift */,
 				8BD932662AC93B3000F49E24 /* ToggleStateIntent.swift */,
 				8B8AC1D02AC1CDB50030F5DC /* Assets.xcassets */,
 				8B8AC1D22AC1CDB50030F5DC /* Info.plist */,
@@ -353,6 +357,7 @@
 				8BBDC1432BEF4B1200CF6C2D /* DeckManager.swift in Sources */,
 				8BD932572AC7F22000F49E24 /* test.swift in Sources */,
 				8BD932632AC8C64000F49E24 /* AddWordView.swift in Sources */,
+				8BBDC15E2BFC236200CF6C2D /* ToggleRandomIntent.swift in Sources */,
 				8B8AC1B42AC1C3570030F5DC /* ContentView.swift in Sources */,
 				8BBDC1502BF000E000CF6C2D /* WordNew.swift in Sources */,
 				8BD932592AC8AB1900F49E24 /* HomeDecksView.swift in Sources */,
@@ -368,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BBDC15F2BFC236200CF6C2D /* ToggleRandomIntent.swift in Sources */,
 				8B8AC1CF2AC1CDB40030F5DC /* RandomWordLearned.swift in Sources */,
 				8BBDC15A2BF3DCAE00CF6C2D /* Secrets.swift in Sources */,
 				8B8AC1DC2AC303090030F5DC /* Word.swift in Sources */,

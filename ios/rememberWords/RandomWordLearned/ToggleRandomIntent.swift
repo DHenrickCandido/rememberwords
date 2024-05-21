@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseCore
 
-struct ToggleStateIntent: AppIntent {
+struct ToggleRandomIntent: AppIntent {
     static var title: LocalizedStringResource = "idk what im doing"
     
     @Parameter(title: "idWord")
@@ -42,12 +42,8 @@ struct ToggleStateIntent: AppIntent {
     }
     
     func perform() async throws -> some IntentResult {
-        if self.isTurned == true {
-            updateSelectedWordSide(isTurned: false)
-        } else if self.isTurned == false {
-            updateSelectedWordSide(isTurned: true)
-        }
-        UserDefaults.standard.set(true, forKey: "isButtonTurn")
+
+        UserDefaults.standard.set(true, forKey: "isButtonRandom")
 
         return .result()
     }

@@ -56,30 +56,60 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FA87D532-9144-4511-9EB3-F90D079610D4"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "rememberWords/Cards/CardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "removeWord(id:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FA87D532-9144-4511-9EB3-F90D079610D4 - 636026d58c0c5835"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RandomWordLearnedExtension.CardView.removeWord(id: Swift.String) -&gt; ()"
+                  moduleName = "RandomWordLearnedExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegohenrick/Documents/Projects/Apple/RememberWords-main/rememberwords/ios/rememberWords/rememberWords/Cards/CardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99">
+               </Location>
+               <Location
+                  uuid = "FA87D532-9144-4511-9EB3-F90D079610D4 - 636026d58c0c5835"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RandomWordLearnedExtension.CardView.removeWord(id: Swift.String) -&gt; ()"
+                  moduleName = "RandomWordLearnedExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegohenrick/Documents/Projects/Apple/RememberWords-main/rememberwords/ios/rememberWords/rememberWords/Cards/CardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "01630B64-168A-4F32-93DE-A90CDA1892F4"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "rememberWords/Cards/CardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "removeWord(id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -88,46 +118,106 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B6B488C3-5C9E-47C1-875B-AA54D7B79E19"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "rememberWords/Cards/CardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "removeWord(id:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B6B488C3-5C9E-47C1-875B-AA54D7B79E19 - 636026d58c0c59da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RandomWordLearnedExtension.CardView.removeWord(id: Swift.String) -&gt; ()"
+                  moduleName = "RandomWordLearnedExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegohenrick/Documents/Projects/Apple/RememberWords-main/rememberwords/ios/rememberWords/rememberWords/Cards/CardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102">
+               </Location>
+               <Location
+                  uuid = "B6B488C3-5C9E-47C1-875B-AA54D7B79E19 - 39f82770f126b594"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RandomWordLearnedExtension.CardView.removeWord(id: Swift.String) -&gt; ()"
+                  moduleName = "RandomWordLearnedExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegohenrick/Documents/Projects/Apple/RememberWords-main/rememberwords/ios/rememberWords/rememberWords/Cards/CardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B243510A-530F-4534-A959-7D0097147CA4"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "rememberWords/Cards/CardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "removeWord(id:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B243510A-530F-4534-A959-7D0097147CA4 - 636026d58c0c59da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RandomWordLearnedExtension.CardView.removeWord(id: Swift.String) -&gt; ()"
+                  moduleName = "RandomWordLearnedExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegohenrick/Documents/Projects/Apple/RememberWords-main/rememberwords/ios/rememberWords/rememberWords/Cards/CardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102">
+               </Location>
+               <Location
+                  uuid = "B243510A-530F-4534-A959-7D0097147CA4 - 39f82770f126b594"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RandomWordLearnedExtension.CardView.removeWord(id: Swift.String) -&gt; ()"
+                  moduleName = "RandomWordLearnedExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegohenrick/Documents/Projects/Apple/RememberWords-main/rememberwords/ios/rememberWords/rememberWords/Cards/CardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4C1953D3-E9D7-42A1-B772-A667023570E9"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "rememberWords/Cards/CardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "removeWord(id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -135,144 +225,188 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "11F60F10-08D0-449D-9B56-63F8D91F4460"
+            uuid = "FC538239-CCD3-42C6-8A73-7B06412C82E1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RandomWordLearned/RandomWordLearned.swift"
+            filePath = "rememberWords/Cards/CardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "getTimeline(in:completion:)"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "deleteWord(id:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FC538239-CCD3-42C6-8A73-7B06412C82E1 - b33db00f4eb9403f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RandomWordLearnedExtension.CardView.deleteWord(id: Swift.String) -&gt; ()"
+                  moduleName = "RandomWordLearnedExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegohenrick/Documents/Projects/Apple/RememberWords-main/rememberwords/ios/rememberWords/rememberWords/Cards/CardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78">
+               </Location>
+               <Location
+                  uuid = "FC538239-CCD3-42C6-8A73-7B06412C82E1 - b33db00f4eb9403f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RandomWordLearnedExtension.CardView.deleteWord(id: Swift.String) -&gt; ()"
+                  moduleName = "RandomWordLearnedExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegohenrick/Documents/Projects/Apple/RememberWords-main/rememberwords/ios/rememberWords/rememberWords/Cards/CardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3CE6F341-CE30-4099-ADC2-3346F05D2B5E"
+            uuid = "A3D35F8E-E8D8-42B1-A379-DDD9208C7D57"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RandomWordLearned/RandomWordLearned.swift"
+            filePath = "rememberWords/Cards/CardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "getTimeline(in:completion:)"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "deleteWord(id:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A3D35F8E-E8D8-42B1-A379-DDD9208C7D57 - b33db00f4eb9401c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RandomWordLearnedExtension.CardView.deleteWord(id: Swift.String) -&gt; ()"
+                  moduleName = "RandomWordLearnedExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegohenrick/Documents/Projects/Apple/RememberWords-main/rememberwords/ios/rememberWords/rememberWords/Cards/CardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79">
+               </Location>
+               <Location
+                  uuid = "A3D35F8E-E8D8-42B1-A379-DDD9208C7D57 - b33db00f4eb9401c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RandomWordLearnedExtension.CardView.deleteWord(id: Swift.String) -&gt; ()"
+                  moduleName = "RandomWordLearnedExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegohenrick/Documents/Projects/Apple/RememberWords-main/rememberwords/ios/rememberWords/rememberWords/Cards/CardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "14B134D8-7896-45F1-889E-447DB7915AC5"
-            shouldBeEnabled = "Yes"
+            uuid = "DCB50065-FFF5-4522-96BD-19AB10ABFD5D"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RandomWordLearned/RandomWordLearned.swift"
+            filePath = "rememberWords/Cards/CardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "getTimeline(in:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "882269B0-15FF-4014-AC24-5FA92543C1ED"
-            shouldBeEnabled = "Yes"
+            uuid = "B8EE72D5-2F5D-483A-9C00-285FA5259700"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RandomWordLearned/RandomWordLearned.swift"
+            filePath = "rememberWords/Cards/CardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "getTimeline(in:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7D98EA6A-09E0-45AB-B70C-6E6FD64B3090"
-            shouldBeEnabled = "Yes"
+            uuid = "2B099AB6-FBD6-4FA2-88F6-0532A827A124"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RandomWordLearned/RandomWordLearned.swift"
+            filePath = "rememberWords/Cards/CardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "getTimeline(in:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ACC046DC-DD34-4577-8A47-2B497AE919D8"
-            shouldBeEnabled = "Yes"
+            uuid = "1DFF9E5A-B6A0-4A77-AE4C-3CD9A8190E4A"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RandomWordLearned/RandomWordLearned.swift"
+            filePath = "rememberWords/Cards/CardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "getTimeline(in:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4771D10F-5A3E-4A46-AD03-1C3DEF03C628"
-            shouldBeEnabled = "Yes"
+            uuid = "9EAF08BB-14D3-4AC6-B059-5ECED815F4A0"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RandomWordLearned/RandomWordLearned.swift"
+            filePath = "rememberWords/Cards/CardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "getTimeline(in:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "01F15D80-A84B-4E6F-83FB-FD689F8B540E"
+            uuid = "25D464B2-5CBF-4EF1-BD4C-C42B5DC62F95"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RandomWordLearned/RandomWordLearned.swift"
+            filePath = "RandomWordLearned/ToggleRandomIntent.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "getTimeline(in:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6ACD1B01-735C-4D77-971B-853606D2E4D0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RandomWordLearned/RandomWordLearned.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "getTimeline(in:completion:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "perform()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

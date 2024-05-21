@@ -14,128 +14,183 @@ import FirebaseFirestore
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        var isTurned = false
-        var selectedWordNova = WordNew(id: "", word: "No Words", translation: "No Words")
+        let isTurned = false
+        let selectedWordNova = WordNew(id: "", word: "No Words", translation: "No Words")
 
         return SimpleEntry(date: Date(), selectedWordEntry: selectedWordNova, isTurned: isTurned)
     }
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let db = Firestore.firestore()
-        var isTurned = false
-        var selectedWordNova = WordNew(id: "", word: "No Words", translation: "No Words")
+        UserDefaults.standard.synchronize()
 
-        let entry = SimpleEntry(date: Date(), selectedWordEntry: selectedWordNova, isTurned: isTurned)
-        completion(entry)
-    }
-    
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-        let currentDate = Date()
-        
-        let isButtonPressed = UserDefaults.standard.bool(forKey: "isButtonPressed")
-        
-        if isButtonPressed == false || isButtonPressed == nil {
-            print("TEST CUUUU")
+        let isButtonTurn = UserDefaults.standard.bool(forKey: "isButtonTurn")
+        let isButtonRandom = UserDefaults.standard.bool(forKey: "isButtonRandom")
+        print(isButtonTurn)
+        print(isButtonRandom)
+
+        if isButtonRandom == true {
+            print("opa random")
+            UserDefaults.standard.set(false, forKey: "isButtonRandom")
+            UserDefaults.standard.set(false, forKey: "isButtonTurn")
+            
             let db = Firestore.firestore()
-
+            
             guard let userID = Auth.auth().currentUser?.uid else { return }
-
+            
             let ref = db.collection("Users").document(userID).collection("Deck")
-
+            
             ref.getDocuments { snapshot, error in
                 if let snapshot = snapshot {
                     var wordsList: [WordNew] = []
-
+                    
                     for document in snapshot.documents {
                         let data = document.data()
-
                         let id = data["id"] as? String ?? ""
                         let word = data["word"] as? String ?? ""
                         let translation = data["translation"] as? String ?? ""
-
                         let wordCreated = WordNew(id: id, word: word, translation: translation)
                         wordsList.append(wordCreated)
                     }
-
+                    
                     if !wordsList.isEmpty {
                         let randomIndex = Int.random(in: 0..<wordsList.count)
                         let randomWord = wordsList[randomIndex]
-
-                        let randomWordRef = db.collection("Users").document(userID).collection("SelectedWord").document("word")
-                        randomWordRef.setData(["id": randomWord.id, "word": randomWord.word, "translation": randomWord.translation, "isTurned": false]) { error in
-                            if let error = error {
-                                print("Error adding random word: \(error)")
-                            } else {
-                                print("Random word added successfully")
-                            }
-                        }
+                        UserDefaults.standard.set(randomWord.id, forKey: "RandomWord.id")
+                        UserDefaults.standard.set(randomWord.word, forKey: "RandomWord.word")
+                        UserDefaults.standard.set(randomWord.translation, forKey: "RandomWord.translation")
+                        UserDefaults.standard.set(false, forKey: "RandomWord.isTurned")
+                        
+                        let wordCreated = WordNew(id: randomWord.id, word: randomWord.word, translation: randomWord.translation)
+                        
+                        let entry = SimpleEntry(date: Date(), selectedWordEntry: wordCreated, isTurned: false)
+                        completion(entry)
                     }
                 } else {
                     print("Error getting documents: \(error)")
                 }
             }
             
-            guard let userID = Auth.auth().currentUser?.uid else { return }
+        } else if isButtonTurn == true {
+            print("opa passou embaixp")
+            UserDefaults.standard.set(false, forKey: "isButtonTurn")
+            UserDefaults.standard.set(false, forKey: "isButtonRandom")
             
-            let docRef = db.collection("Users").document(userID).collection("SelectedWord").document("word")
+            let id = UserDefaults.standard.string(forKey: "RandomWord.id")
+            let word = UserDefaults.standard.string(forKey: "RandomWord.word")
+            let translation = UserDefaults.standard.string(forKey: "RandomWord.translation")
+            let isTurned = UserDefaults.standard.bool(forKey: "RandomWord.isTurned")
             
-            docRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let data = document.data()
-                    
-                    let id = data?["id"] as? String ?? ""
-                    let word = data?["word"] as? String ?? ""
-                    let translation = data?["translation"] as? String ?? ""
-                    let isTurned = data?["isTurned"] as? Bool ?? false
-                    let wordCreated = WordNew(id: id, word: word, translation: translation)
-                    
-                    let entry = SimpleEntry(date: Date(), selectedWordEntry: wordCreated, isTurned: isTurned)
-                    entries.append(entry)
-                    
-                } else {
-                    print("Document does not exist")
-                }
-                let timeline = Timeline(entries: entries, policy: .after(Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)!))
-                completion(timeline)
-            }
-
+            let wordCreated = WordNew(id: id ?? "", word: word ?? "No Words", translation: translation ?? "No Words")
+            
+            let entry = SimpleEntry(date: Date(), selectedWordEntry: wordCreated, isTurned: isTurned)
+            completion(entry)
             
         } else {
-            UserDefaults.standard.set(false, forKey: "isButtonPressed")
+            print("passou direto")
+            let id = UserDefaults.standard.string(forKey: "RandomWord.id")
+            let word = UserDefaults.standard.string(forKey: "RandomWord.word")
+            let translation = UserDefaults.standard.string(forKey: "RandomWord.translation")
+            let isTurned = UserDefaults.standard.bool(forKey: "RandomWord.isTurned")
+            
+            let wordCreated = WordNew(id: id ?? "", word: word ?? "No Words", translation: translation ?? "No Words")
+            
+            let entry = SimpleEntry(date: Date(), selectedWordEntry: wordCreated, isTurned: isTurned)
+            completion(entry)
+        }
 
+    }
+    
+    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        var entries: [SimpleEntry] = []
+        let currentDate = Date()
+        UserDefaults.standard.synchronize()
+
+        let isButtonTurn = UserDefaults.standard.bool(forKey: "isButtonTurn")
+        let isButtonRandom = UserDefaults.standard.bool(forKey: "isButtonRandom")
+        print(isButtonTurn)
+        print(isButtonRandom)
+
+        if isButtonRandom == true {
+            print("opa random")
+            UserDefaults.standard.set(false, forKey: "isButtonRandom")
+            UserDefaults.standard.set(false, forKey: "isButtonTurn")
+            
             let db = Firestore.firestore()
             
             guard let userID = Auth.auth().currentUser?.uid else { return }
             
-            let docRef = db.collection("Users").document(userID).collection("SelectedWord").document("word")
+            let ref = db.collection("Users").document(userID).collection("Deck")
             
-            docRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let data = document.data()
+            ref.getDocuments { snapshot, error in
+                if let snapshot = snapshot {
+                    var wordsList: [WordNew] = []
                     
-                    let id = data?["id"] as? String ?? ""
-                    let word = data?["word"] as? String ?? ""
-                    let translation = data?["translation"] as? String ?? ""
-                    let isTurned = data?["isTurned"] as? Bool ?? false
-                    let wordCreated = WordNew(id: id, word: word, translation: translation)
+                    for document in snapshot.documents {
+                        let data = document.data()
+                        let id = data["id"] as? String ?? ""
+                        let word = data["word"] as? String ?? ""
+                        let translation = data["translation"] as? String ?? ""
+                        let wordCreated = WordNew(id: id, word: word, translation: translation)
+                        wordsList.append(wordCreated)
+                    }
                     
-                    let entry = SimpleEntry(date: Date(), selectedWordEntry: wordCreated, isTurned: isTurned)
-                    entries.append(entry)
-                    
+                    if !wordsList.isEmpty {
+                        let randomIndex = Int.random(in: 0..<wordsList.count)
+                        let randomWord = wordsList[randomIndex]
+                        UserDefaults.standard.set(randomWord.id, forKey: "RandomWord.id")
+                        UserDefaults.standard.set(randomWord.word, forKey: "RandomWord.word")
+                        UserDefaults.standard.set(randomWord.translation, forKey: "RandomWord.translation")
+                        UserDefaults.standard.set(false, forKey: "RandomWord.isTurned")
+                        
+                        let wordCreated = WordNew(id: randomWord.id, word: randomWord.word, translation: randomWord.translation)
+                        
+                        let entry = SimpleEntry(date: Date(), selectedWordEntry: wordCreated, isTurned: false)
+                        entries.append(entry)
+                        print("opa passou aqui meu veio")
+                        
+                        let timeline = Timeline(entries: entries, policy: .after(Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)!))
+                        completion(timeline)
+                    }
                 } else {
-                    print("Document does not exist")
+                    print("Error getting documents: \(error)")
                 }
-                let timeline = Timeline(entries: entries, policy: .after(Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)!))
-                completion(timeline)
             }
+            
+        } else if isButtonTurn == true {
+            print("opa passou embaixp")
+            UserDefaults.standard.set(false, forKey: "isButtonTurn")
+            UserDefaults.standard.set(false, forKey: "isButtonRandom")
+            
+            let id = UserDefaults.standard.string(forKey: "RandomWord.id")
+            let word = UserDefaults.standard.string(forKey: "RandomWord.word")
+            let translation = UserDefaults.standard.string(forKey: "RandomWord.translation")
+            let isTurned = UserDefaults.standard.bool(forKey: "RandomWord.isTurned")
+            
+            let wordCreated = WordNew(id: id ?? "", word: word ?? "No Words", translation: translation ?? "No Words")
+            
+            let entry = SimpleEntry(date: Date(), selectedWordEntry: wordCreated, isTurned: isTurned)
+            entries.append(entry)
+            
+            let timeline = Timeline(entries: entries, policy: .after(Calendar.current.date(byAdding: .minute, value: 5, to: currentDate)!))
+            completion(timeline)
+            
+        } else {
+            print("passou direto")
+            let id = UserDefaults.standard.string(forKey: "RandomWord.id")
+            let word = UserDefaults.standard.string(forKey: "RandomWord.word")
+            let translation = UserDefaults.standard.string(forKey: "RandomWord.translation")
+            let isTurned = UserDefaults.standard.bool(forKey: "RandomWord.isTurned")
+            
+            let wordCreated = WordNew(id: id ?? "", word: word ?? "No Words", translation: translation ?? "No Words")
+            
+            let entry = SimpleEntry(date: Date(), selectedWordEntry: wordCreated, isTurned: isTurned)
+            entries.append(entry)
+            
+            let timeline = Timeline(entries: entries, policy: .after(Calendar.current.date(byAdding: .minute, value: 5, to: currentDate)!))
+            completion(timeline)
         }
-        
     }
-
 }
-
-
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
@@ -170,6 +225,7 @@ struct RandomWordLearnedEntryView : View {
             
                 Spacer()
                 Text(isTurned ? translation : word)
+                    .lineLimit(2)
                     .font(.title3)
                     .foregroundStyle(.black)
                     .fontWeight(.semibold)
@@ -179,21 +235,40 @@ struct RandomWordLearnedEntryView : View {
                     .padding(.top, 8)
                 Spacer()
                 Spacer()
-                Button(intent: ToggleStateIntent(idWord: id, 
-                                                 word: word,
-                                                 translation: translation,
-                                                 isTurned: isTurned,
-                                                 buttonActed: "true")) {
-                    Text("Turn")
-                        .foregroundStyle(.white)
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 32)
-                        .background(Color("GreenPrimary"))
-                        .cornerRadius(10)
-                        .padding(.horizontal, 16)
-                        .padding(.bottom, 16)
-                }.buttonStyle(.plain)
+                HStack{
+                    Button(intent: ToggleStateIntent(idWord: id,
+                                                     word: word,
+                                                     translation: translation,
+                                                     isTurned: isTurned,
+                                                     buttonActed: "true")) {
+                        Image(systemName: "arrow.turn.up.forward.iphone.fill")
+                            .foregroundStyle(.white)
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 32)
+                            .background(Color("GreenPrimary"))
+                            .cornerRadius(10)
+                            .padding(.leading, 14)
+                            .padding(.bottom, 14)
+                    }.buttonStyle(.plain)
+                    
+                    Button(intent: ToggleRandomIntent(idWord: id,
+                                                     word: word,
+                                                     translation: translation,
+                                                     isTurned: isTurned,
+                                                     buttonActed: "true")) {
+                        Image(systemName: "shuffle")
+                            .foregroundStyle(.white)
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 32)
+                            .background(Color("GreenPrimary"))
+                            .cornerRadius(10)
+                            .padding(.trailing, 14)
+                            .padding(.bottom, 14)
+                    }.buttonStyle(.plain)
+                }
+                
             }
             .frame(width: 160, height: 160)
             .animation(.easeInOut, value: isTurned)
@@ -227,21 +302,39 @@ struct RandomWordLearnedEntryView : View {
                 Spacer()
                 Spacer()
                 
-                Button(intent: ToggleStateIntent(idWord: id,
-                                                 word: word,
-                                                 translation: translation,
-                                                 isTurned: isTurned,
-                                                 buttonActed: "true")) {
-                    Text("Turn")
-                        .foregroundStyle(.white)
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 32)
-                        .background(Color("GreenPrimary"))
-                        .cornerRadius(10)
-                        .padding(.horizontal, 16)
-                        .padding(.bottom, 16)
-                }.buttonStyle(.plain)
+                HStack{
+                    Button(intent: ToggleStateIntent(idWord: id,
+                                                     word: word,
+                                                     translation: translation,
+                                                     isTurned: isTurned,
+                                                     buttonActed: "true")) {
+                        Image(systemName: "arrow.turn.up.forward.iphone.fill")
+                            .foregroundStyle(.white)
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 32)
+                            .background(Color("GreenPrimary"))
+                            .cornerRadius(10)
+                            .padding(.leading, 14)
+                            .padding(.bottom, 14)
+                    }.buttonStyle(.plain)
+                    
+                    Button(intent: ToggleRandomIntent(idWord: id,
+                                                     word: word,
+                                                     translation: translation,
+                                                     isTurned: isTurned,
+                                                     buttonActed: "true")) {
+                        Image(systemName: "shuffle")
+                            .foregroundStyle(.white)
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 32)
+                            .background(Color("GreenPrimary"))
+                            .cornerRadius(10)
+                            .padding(.trailing, 14)
+                            .padding(.bottom, 14)
+                    }.buttonStyle(.plain)
+                }
             }
             .frame(width: 340, height: 160)
             .animation(.easeInOut, value: isTurned)

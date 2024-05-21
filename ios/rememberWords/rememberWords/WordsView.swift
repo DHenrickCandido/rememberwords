@@ -81,7 +81,14 @@ struct WordsView: View {
             }
             .onAppear(){
                 fetchWords()
-                
+//                let randomWord = wordBank.randomElement()
+//                UserDefaults.standard.set(false, forKey: "isButtonRandom")
+//                UserDefaults.standard.set(false, forKey: "isButtonTurn")
+//                UserDefaults.standard.set(randomWord?.id ?? "", forKey: "RandomWord.id")
+//                UserDefaults.standard.set(randomWord?.word ?? "No Words", forKey: "RandomWord.word")
+//                UserDefaults.standard.set(randomWord?.translation ?? "No Words", forKey: "RandomWord.translation")
+//                UserDefaults.standard.set(false, forKey: "RandomWord.isTurned")
+//                UserDefaults.standard.synchronize()
             }
         }
     }

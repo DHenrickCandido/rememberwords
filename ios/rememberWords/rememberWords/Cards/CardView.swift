@@ -31,6 +31,7 @@ struct CardView: View {
                             .onTapGesture {
                                 withAnimation {
                                     removeWord(id: id)
+                                    
                                 }
                             }
                         Spacer()
@@ -43,7 +44,6 @@ struct CardView: View {
                             .fontWeight(.semibold)
                             .multilineTextAlignment(.center)
                             .lineLimit(nil)
-
                     }
                     Spacer()
                     Button(action: {
@@ -78,6 +78,17 @@ struct CardView: View {
         for i in 0..<wordBank.count {
             if wordBank[i].id == id {
                 wordBank.remove(at: i)
+                
+                let randomWord = wordBank.randomElement()
+//                UserDefaults.standard.set(false, forKey: "isButtonRandom")
+//                UserDefaults.standard.set(false, forKey: "isButtonTurn")
+                UserDefaults.standard.set(randomWord?.id ?? "", forKey: "RandomWord.id")
+                UserDefaults.standard.set(randomWord?.word ?? "No Words", forKey: "RandomWord.word")
+                UserDefaults.standard.set(randomWord?.translation ?? "No Words", forKey: "RandomWord.translation")
+                UserDefaults.standard.set(false, forKey: "RandomWord.isTurned")
+                UserDefaults.standard.synchronize()
+
+                break
             }
         }
     }
