@@ -14,7 +14,8 @@ Flashly is a mobile app designed to help you learn efficiently using flashcards.
 
 ## Installation
 
-Flashly is available on the App Store.
+[Flashly](https://apps.apple.com/br/app/flashly-remember-words/id6468444410?l=en-GB) is available on the App Store.
+
 
 ## Contributing
 
