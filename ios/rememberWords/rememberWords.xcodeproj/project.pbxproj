@@ -97,7 +97,6 @@
 		8BBDC1422BEF4B1200CF6C2D /* DeckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckManager.swift; sourceTree = "<group>"; };
 		8BBDC14F2BF000E000CF6C2D /* WordNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordNew.swift; sourceTree = "<group>"; };
 		8BBDC15D2BFC236200CF6C2D /* ToggleRandomIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRandomIntent.swift; sourceTree = "<group>"; };
-		8BC320FE2AC31BE3007D845F /* rememberWords.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rememberWords.entitlements; sourceTree = "<group>"; };
 		8BD932562AC7F22000F49E24 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		8BD932582AC8AB1900F49E24 /* HomeDecksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDecksView.swift; sourceTree = "<group>"; };
 		8BD9325B2AC8B10000F49E24 /* DeckCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCardView.swift; sourceTree = "<group>"; };
@@ -164,7 +163,6 @@
 			children = (
 				8BD9325F2AC8C61900F49E24 /* sheets */,
 				8BD9325A2AC8B0EB00F49E24 /* Cards */,
-				8BC320FE2AC31BE3007D845F /* rememberWords.entitlements */,
 				8B8AC1B12AC1C3570030F5DC /* rememberWordsApp.swift */,
 				8B8AC1B32AC1C3570030F5DC /* ContentView.swift */,
 				8B8AC1B52AC1C3590030F5DC /* Assets.xcassets */,
