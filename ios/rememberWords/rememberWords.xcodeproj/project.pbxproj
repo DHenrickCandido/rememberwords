@@ -18,6 +18,8 @@
 		8B39685E2BEF385C00F3F8A7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B39685D2BEF385C00F3F8A7 /* FirebaseFirestoreSwift */; };
 		8B6207DA2C3ED63800DC5FF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B6207D92C3ED63800DC5FF8 /* GoogleService-Info.plist */; };
 		8B6207DB2C3ED63800DC5FF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B6207D92C3ED63800DC5FF8 /* GoogleService-Info.plist */; };
+		8B6207DD2C3EDADD00DC5FF8 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6207DC2C3EDADD00DC5FF8 /* Secrets.swift */; };
+		8B6207DE2C3EDADD00DC5FF8 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6207DC2C3EDADD00DC5FF8 /* Secrets.swift */; };
 		8B8AC1B22AC1C3570030F5DC /* rememberWordsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8AC1B12AC1C3570030F5DC /* rememberWordsApp.swift */; };
 		8B8AC1B42AC1C3570030F5DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8AC1B32AC1C3570030F5DC /* ContentView.swift */; };
 		8B8AC1B62AC1C3590030F5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B8AC1B52AC1C3590030F5DC /* Assets.xcassets */; };
@@ -38,8 +40,6 @@
 		8BBDC14E2BEF502200CF6C2D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8BBDC14D2BEF502200CF6C2D /* FirebaseAuth */; };
 		8BBDC1502BF000E000CF6C2D /* WordNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDC14F2BF000E000CF6C2D /* WordNew.swift */; };
 		8BBDC1512BF000E000CF6C2D /* WordNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDC14F2BF000E000CF6C2D /* WordNew.swift */; };
-		8BBDC1592BF3DCAE00CF6C2D /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDC1582BF3DCAE00CF6C2D /* Secrets.swift */; };
-		8BBDC15A2BF3DCAE00CF6C2D /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDC1582BF3DCAE00CF6C2D /* Secrets.swift */; };
 		8BBDC15E2BFC236200CF6C2D /* ToggleRandomIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDC15D2BFC236200CF6C2D /* ToggleRandomIntent.swift */; };
 		8BBDC15F2BFC236200CF6C2D /* ToggleRandomIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDC15D2BFC236200CF6C2D /* ToggleRandomIntent.swift */; };
 		8BD932572AC7F22000F49E24 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD932562AC7F22000F49E24 /* test.swift */; };
@@ -80,6 +80,7 @@
 		8B0C88382B20B1AA00B898FA /* WordDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailedView.swift; sourceTree = "<group>"; };
 		8B0C883A2B20B7CF00B898FA /* WordShuffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordShuffleView.swift; sourceTree = "<group>"; };
 		8B6207D92C3ED63800DC5FF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8B6207DC2C3EDADD00DC5FF8 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		8B8AC1AE2AC1C3570030F5DC /* rememberWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rememberWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8AC1B12AC1C3570030F5DC /* rememberWordsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rememberWordsApp.swift; sourceTree = "<group>"; };
 		8B8AC1B32AC1C3570030F5DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		8B8AC1D22AC1CDB50030F5DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BBDC1422BEF4B1200CF6C2D /* DeckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckManager.swift; sourceTree = "<group>"; };
 		8BBDC14F2BF000E000CF6C2D /* WordNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordNew.swift; sourceTree = "<group>"; };
-		8BBDC1582BF3DCAE00CF6C2D /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		8BBDC15D2BFC236200CF6C2D /* ToggleRandomIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRandomIntent.swift; sourceTree = "<group>"; };
 		8BC320FE2AC31BE3007D845F /* rememberWords.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rememberWords.entitlements; sourceTree = "<group>"; };
 		8BD932552AC5A88600F49E24 /* RandomWordLearnedExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RandomWordLearnedExtension.entitlements; sourceTree = "<group>"; };
@@ -166,11 +166,11 @@
 				8BD9325A2AC8B0EB00F49E24 /* Cards */,
 				8BC320FE2AC31BE3007D845F /* rememberWords.entitlements */,
 				8B8AC1B12AC1C3570030F5DC /* rememberWordsApp.swift */,
-				8BBDC1582BF3DCAE00CF6C2D /* Secrets.swift */,
 				8B8AC1B32AC1C3570030F5DC /* ContentView.swift */,
 				8B8AC1B52AC1C3590030F5DC /* Assets.xcassets */,
 				8B8AC1B72AC1C3590030F5DC /* Preview Content */,
 				8B8AC1BF2AC1C99A0030F5DC /* Word.swift */,
+				8B6207DC2C3EDADD00DC5FF8 /* Secrets.swift */,
 				8BBDC14F2BF000E000CF6C2D /* WordNew.swift */,
 				8BD932562AC7F22000F49E24 /* test.swift */,
 				8BD932582AC8AB1900F49E24 /* HomeDecksView.swift */,
@@ -350,11 +350,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B0C88392B20B1AA00B898FA /* WordDetailedView.swift in Sources */,
-				8BBDC1592BF3DCAE00CF6C2D /* Secrets.swift in Sources */,
 				8BD9325E2AC8BC4100F49E24 /* CardView.swift in Sources */,
 				8B8AC1C02AC1C99A0030F5DC /* Word.swift in Sources */,
 				8B0C883B2B20B7CF00B898FA /* WordShuffleView.swift in Sources */,
 				8BBDC1432BEF4B1200CF6C2D /* DeckManager.swift in Sources */,
+				8B6207DD2C3EDADD00DC5FF8 /* Secrets.swift in Sources */,
 				8BD932572AC7F22000F49E24 /* test.swift in Sources */,
 				8BD932632AC8C64000F49E24 /* AddWordView.swift in Sources */,
 				8BBDC15E2BFC236200CF6C2D /* ToggleRandomIntent.swift in Sources */,
@@ -374,8 +374,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BBDC15F2BFC236200CF6C2D /* ToggleRandomIntent.swift in Sources */,
+				8B6207DE2C3EDADD00DC5FF8 /* Secrets.swift in Sources */,
 				8B8AC1CF2AC1CDB40030F5DC /* RandomWordLearned.swift in Sources */,
-				8BBDC15A2BF3DCAE00CF6C2D /* Secrets.swift in Sources */,
 				8B8AC1DC2AC303090030F5DC /* Word.swift in Sources */,
 				8B0EF8EF2ACAA6F20010FA02 /* CardView.swift in Sources */,
 				8BBDC1512BF000E000CF6C2D /* WordNew.swift in Sources */,
