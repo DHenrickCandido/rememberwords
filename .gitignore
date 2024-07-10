@@ -91,3 +91,4 @@ iOSInjectionProject/
 GoogleService-Info.plist
 Secrets.swift
 RandomWordLearnedExtension.entitlements
+rememberWords.entitlements
