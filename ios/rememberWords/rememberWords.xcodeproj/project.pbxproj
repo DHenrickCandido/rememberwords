@@ -81,6 +81,7 @@
 		8B0C883A2B20B7CF00B898FA /* WordShuffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordShuffleView.swift; sourceTree = "<group>"; };
 		8B6207D92C3ED63800DC5FF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B6207DF2C3EDB2B00DC5FF8 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		8B6207E22C3EDBE500DC5FF8 /* RandomWordLearnedExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = RandomWordLearnedExtension.entitlements; sourceTree = "<group>"; };
 		8B8AC1AE2AC1C3570030F5DC /* rememberWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rememberWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8AC1B12AC1C3570030F5DC /* rememberWordsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rememberWordsApp.swift; sourceTree = "<group>"; };
 		8B8AC1B32AC1C3570030F5DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,7 +98,6 @@
 		8BBDC14F2BF000E000CF6C2D /* WordNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordNew.swift; sourceTree = "<group>"; };
 		8BBDC15D2BFC236200CF6C2D /* ToggleRandomIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRandomIntent.swift; sourceTree = "<group>"; };
 		8BC320FE2AC31BE3007D845F /* rememberWords.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rememberWords.entitlements; sourceTree = "<group>"; };
-		8BD932552AC5A88600F49E24 /* RandomWordLearnedExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RandomWordLearnedExtension.entitlements; sourceTree = "<group>"; };
 		8BD932562AC7F22000F49E24 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		8BD932582AC8AB1900F49E24 /* HomeDecksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDecksView.swift; sourceTree = "<group>"; };
 		8BD9325B2AC8B10000F49E24 /* DeckCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCardView.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		8B8AC1A52AC1C3570030F5DC = {
 			isa = PBXGroup;
 			children = (
-				8BD932552AC5A88600F49E24 /* RandomWordLearnedExtension.entitlements */,
+				8B6207E22C3EDBE500DC5FF8 /* RandomWordLearnedExtension.entitlements */,
 				8B6207D92C3ED63800DC5FF8 /* GoogleService-Info.plist */,
 				8B8AC1B02AC1C3570030F5DC /* rememberWords */,
 				8B8AC1CB2AC1CDB40030F5DC /* RandomWordLearned */,
