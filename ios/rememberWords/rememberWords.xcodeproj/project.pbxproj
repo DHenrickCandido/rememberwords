@@ -16,6 +16,8 @@
 		8B39685A2BEF385C00F3F8A7 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8B3968592BEF385C00F3F8A7 /* FirebaseCrashlytics */; };
 		8B39685C2BEF385C00F3F8A7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8B39685B2BEF385C00F3F8A7 /* FirebaseFirestore */; };
 		8B39685E2BEF385C00F3F8A7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B39685D2BEF385C00F3F8A7 /* FirebaseFirestoreSwift */; };
+		8B6207DA2C3ED63800DC5FF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B6207D92C3ED63800DC5FF8 /* GoogleService-Info.plist */; };
+		8B6207DB2C3ED63800DC5FF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B6207D92C3ED63800DC5FF8 /* GoogleService-Info.plist */; };
 		8B8AC1B22AC1C3570030F5DC /* rememberWordsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8AC1B12AC1C3570030F5DC /* rememberWordsApp.swift */; };
 		8B8AC1B42AC1C3570030F5DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8AC1B32AC1C3570030F5DC /* ContentView.swift */; };
 		8B8AC1B62AC1C3590030F5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B8AC1B52AC1C3590030F5DC /* Assets.xcassets */; };
@@ -27,8 +29,6 @@
 		8B8AC1D12AC1CDB50030F5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B8AC1D02AC1CDB50030F5DC /* Assets.xcassets */; };
 		8B8AC1D52AC1CDB50030F5DC /* RandomWordLearnedExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8B8AC1C52AC1CDB30030F5DC /* RandomWordLearnedExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8B8AC1DC2AC303090030F5DC /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8AC1BF2AC1C99A0030F5DC /* Word.swift */; };
-		8BBDC1402BEF469100CF6C2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BBDC13F2BEF469100CF6C2D /* GoogleService-Info.plist */; };
-		8BBDC1412BEF469100CF6C2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BBDC13F2BEF469100CF6C2D /* GoogleService-Info.plist */; };
 		8BBDC1432BEF4B1200CF6C2D /* DeckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDC1422BEF4B1200CF6C2D /* DeckManager.swift */; };
 		8BBDC1442BEF4B1200CF6C2D /* DeckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDC1422BEF4B1200CF6C2D /* DeckManager.swift */; };
 		8BBDC1462BEF4DD900CF6C2D /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 8BBDC1452BEF4DD900CF6C2D /* FirebaseFirestoreCombine-Community */; };
@@ -79,6 +79,7 @@
 /* Begin PBXFileReference section */
 		8B0C88382B20B1AA00B898FA /* WordDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailedView.swift; sourceTree = "<group>"; };
 		8B0C883A2B20B7CF00B898FA /* WordShuffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordShuffleView.swift; sourceTree = "<group>"; };
+		8B6207D92C3ED63800DC5FF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B8AC1AE2AC1C3570030F5DC /* rememberWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rememberWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8AC1B12AC1C3570030F5DC /* rememberWordsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rememberWordsApp.swift; sourceTree = "<group>"; };
 		8B8AC1B32AC1C3570030F5DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		8B8AC1CE2AC1CDB40030F5DC /* RandomWordLearned.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWordLearned.swift; sourceTree = "<group>"; };
 		8B8AC1D02AC1CDB50030F5DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B8AC1D22AC1CDB50030F5DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BBDC13F2BEF469100CF6C2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8BBDC1422BEF4B1200CF6C2D /* DeckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckManager.swift; sourceTree = "<group>"; };
 		8BBDC14F2BF000E000CF6C2D /* WordNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordNew.swift; sourceTree = "<group>"; };
 		8BBDC1582BF3DCAE00CF6C2D /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				8BD932552AC5A88600F49E24 /* RandomWordLearnedExtension.entitlements */,
-				8BBDC13F2BEF469100CF6C2D /* GoogleService-Info.plist */,
+				8B6207D92C3ED63800DC5FF8 /* GoogleService-Info.plist */,
 				8B8AC1B02AC1C3570030F5DC /* rememberWords */,
 				8B8AC1CB2AC1CDB40030F5DC /* RandomWordLearned */,
 				8B8AC1C62AC1CDB30030F5DC /* Frameworks */,
@@ -328,8 +328,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B8AC1B92AC1C3590030F5DC /* Preview Assets.xcassets in Resources */,
-				8BBDC1402BEF469100CF6C2D /* GoogleService-Info.plist in Resources */,
 				8B8AC1B62AC1C3590030F5DC /* Assets.xcassets in Resources */,
+				8B6207DA2C3ED63800DC5FF8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,8 +337,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BBDC1412BEF469100CF6C2D /* GoogleService-Info.plist in Resources */,
 				8B8AC1D12AC1CDB50030F5DC /* Assets.xcassets in Resources */,
+				8B6207DB2C3ED63800DC5FF8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
